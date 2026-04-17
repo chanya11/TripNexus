@@ -1,0 +1,93 @@
+.sidebar {
+  align-self: start;
+  background: linear-gradient(180deg, rgba(12, 18, 32, 0.96), rgba(8, 12, 22, 0.96));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--panel-shadow);
+}
+
+.mapBox {
+  display: grid;
+  place-items: center;
+  height: 122px;
+  margin: 12px;
+  border-radius: 18px;
+  color: var(--text-strong);
+  font-weight: 800;
+  background:
+    linear-gradient(135deg, rgba(7, 12, 24, 0.15), rgba(157, 107, 255, 0.15)),
+    url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=600&q=80") center/cover;
+  border: 1px solid rgba(61, 184, 255, 0.16);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.headingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+}
+
+.headingRow h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.headingRow button {
+  border: 0;
+  background: transparent;
+  color: var(--neon-blue);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.group {
+  padding: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.group h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: var(--text-strong);
+}
+
+.group input[type="range"] {
+  width: 100%;
+  accent-color: var(--neon-blue);
+}
+
+.rangeText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.check,
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.starGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.group select {
+  width: 100%;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 8px;
+  background: rgba(17, 25, 43, 0.95);
+  color: var(--text);
+}

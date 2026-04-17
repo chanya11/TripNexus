@@ -1,0 +1,40 @@
+.button {
+  min-height: 36px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 8px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s ease, box-shadow 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: #090b12;
+  box-shadow: 0 8px 20px rgba(49, 168, 255, 0.3);
+}
+
+.primary:hover {
+  filter: brightness(1.08);
+}
+
+.secondary {
+  background: var(--surface);
+  color: var(--neon-blue);
+  border-color: var(--line);
+}
+
+.secondary:hover {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 0 3px rgba(49, 168, 255, 0.16);
+}
+
+.ghost {
+  background: transparent;
+  color: inherit;
+}
+
+.ghost:hover {
+  background: rgba(139, 92, 246, 0.14);
+}

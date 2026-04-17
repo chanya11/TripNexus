@@ -1,0 +1,176 @@
+.page {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 150px 16px 12px;
+}
+
+.searchWrap {
+  margin-bottom: 18px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 18px;
+}
+
+.leftRail {
+  display: grid;
+  align-self: start;
+  gap: 12px;
+}
+
+.yellowSearch {
+  display: grid;
+  gap: 10px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(12, 18, 32, 0.96), rgba(9, 14, 26, 0.98));
+  padding: 14px;
+  border: 1px solid var(--line);
+  box-shadow: var(--panel-shadow);
+}
+
+.yellowSearch h2 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--text-strong);
+}
+
+.yellowSearch label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.yellowSearch input,
+.yellowSearch select {
+  width: 100%;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(16, 23, 39, 0.96);
+  padding: 0 9px;
+  color: var(--text);
+}
+
+.yellowSearch button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: #05070d;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.dateGrid {
+  display: grid;
+  gap: 8px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.summary h1 {
+  margin: 4px 0 4px;
+  font-size: 24px;
+  color: var(--text-strong);
+}
+
+.summary p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.breadcrumb {
+  color: var(--neon-blue) !important;
+}
+
+.summary label {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-width: 190px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.summary select {
+  height: 38px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  padding: 0 10px;
+  background: rgba(11, 17, 31, 0.9);
+  color: var(--neon-blue);
+}
+
+.alert,
+.empty {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(12, 18, 32, 0.96), rgba(17, 24, 41, 0.96));
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  box-shadow: var(--panel-shadow);
+}
+
+.alert {
+  border-left: 4px solid var(--success);
+  color: var(--text);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.chips button {
+  min-height: 34px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(61, 184, 255, 0.08);
+  color: var(--neon-blue);
+  padding: 0 12px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chips span {
+  margin-left: 6px;
+}
+
+.empty h2 {
+  margin: 0 0 8px;
+}
+
+.empty p {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 920px) {
+  .page {
+    padding-top: 190px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    flex-direction: column;
+  }
+}
