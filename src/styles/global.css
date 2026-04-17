@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #04050a;
+  --bg-elev: #0a0e18;
+  --bg-soft: #12192a;
+  --surface: rgba(12, 18, 32, 0.9);
+  --surface-2: rgba(18, 26, 44, 0.95);
+  --surface-3: rgba(24, 34, 58, 0.95);
+  --text: #f4f7ff;
+  --text-strong: #ffffff;
+  --muted: #97a7cb;
+  --line: rgba(109, 136, 199, 0.22);
+  --line-strong: rgba(105, 167, 255, 0.4);
+  --panel-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --neon-blue: #3db8ff;
+  --neon-blue-soft: rgba(61, 184, 255, 0.18);
+  --neon-purple: #9d6bff;
+  --neon-purple-soft: rgba(157, 107, 255, 0.2);
+  --success: #4ade80;
+  --warning: #ffd166;
+  --danger: #ff6b8b;
+  --hero-glow:
+    radial-gradient(circle at 15% 20%, rgba(61, 184, 255, 0.22), transparent 24%),
+    radial-gradient(circle at 85% 12%, rgba(157, 107, 255, 0.26), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(61, 184, 255, 0.12), transparent 35%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    var(--hero-glow),
+    linear-gradient(180deg, #060814 0%, #04050a 52%, #070b14 100%);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  letter-spacing: 0;
+  font: inherit;
+}
+
+button,
+input,
+select,
+textarea,
+a {
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(157, 107, 255, 0.42);
+  outline-offset: 2px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-font {
+  font-family: "Orbitron", "Space Grotesk", sans-serif;
+  letter-spacing: 0.03em;
+}
+
+a {
+  color: var(--neon-blue);
+}
+
+::selection {
+  background: rgba(61, 184, 255, 0.22);
+  color: var(--text-strong);
+}
