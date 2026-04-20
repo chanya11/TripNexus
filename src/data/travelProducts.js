@@ -137,7 +137,7 @@ export const carResults = [
     supplier: "Avis",
     rating: 8.7,
     price: 34,
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80",
     detail: "Compact - automatic - air conditioning",
   },
   {
@@ -146,7 +146,7 @@ export const carResults = [
     supplier: "Europcar",
     rating: 8.9,
     price: 69,
-    image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80",
     detail: "People carrier - 6 seats - unlimited mileage",
   },
   {
@@ -155,7 +155,7 @@ export const carResults = [
     supplier: "Green Motion",
     rating: 8.4,
     price: 58,
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80",
     detail: "Electric SUV - automatic - free cancellation",
   },
   {
@@ -164,7 +164,7 @@ export const carResults = [
     supplier: "Hertz",
     rating: 8.5,
     price: 29,
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80",
     detail: "Sedan - manual - fuel efficient",
   },
   {
@@ -173,7 +173,7 @@ export const carResults = [
     supplier: "Sixt",
     rating: 8.8,
     price: 61,
-    image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80",
     detail: "SUV - automatic - great for road trips",
   },
   {
@@ -182,7 +182,7 @@ export const carResults = [
     supplier: "Budget",
     rating: 8.9,
     price: 84,
-    image: "https://images.unsplash.com/photo-1583267746897-2cf415887172?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=900&q=80",
     detail: "Premium SUV - 7 seats - unlimited mileage",
   },
 ];

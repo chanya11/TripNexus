@@ -1,4 +1,7 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../components/common/Button.jsx";
+import { useBooking } from "../context/BookingContext.jsx";
 import { attractionResults } from "../data/travelProducts.js";
 import { useSearch } from "../context/SearchContext.jsx";
 import styles from "./Attractions.module.css";
@@ -48,11 +51,13 @@ const cities = [
 ];
 
 export default function Attractions() {
-  const { formatPrice } = useSearch();
+  const { formatPrice, convertPrice } = useSearch();
+  const { upsertBooking } = useBooking();
   const [destination, setDestination] = useState("New Delhi");
   const [date, setDate] = useState("2026-04-20");
   const [activeTab, setActiveTab] = useState("Europe");
   const [selected, setSelected] = useState(null);
+  const navigate = useNavigate();
 
   const withFallback = (event) => {
     if (event.currentTarget.src !== fallbackImage) {
@@ -64,6 +69,23 @@ export default function Attractions() {
     const offset = destinationTabs.indexOf(activeTab) * 3;
     return [...cities.slice(offset), ...cities.slice(0, offset)].slice(0, 32);
   }, [activeTab]);
+
+  const reserveAttraction = (item) => {
+    setSelected(item);
+    upsertBooking({
+      category: "attraction",
+      title: item.title,
+      subtitle: item.location,
+      description: item.detail,
+      amountInInr: convertPrice(item.price),
+      editPath: "/attractions",
+      meta: [
+        { label: "Destination", value: destination },
+        { label: "Date", value: date },
+        { label: "Guests", value: "2 adults" },
+      ],
+    });
+  };
 
   return (
     <main className={styles.page}>
@@ -130,11 +152,22 @@ export default function Attractions() {
                 <p>{item.location}</p>
                 <span>{item.rating} - {item.reviews.toLocaleString()} reviews</span>
                 <strong>{formatPrice(item.price)}</strong>
-                <button onClick={() => setSelected(item)}>{selected?.id === item.id ? "Selected" : "Book tickets"}</button>
+                <button onClick={() => reserveAttraction(item)}>{selected?.id === item.id ? "Selected" : "Book tickets"}</button>
               </div>
             </article>
           ))}
         </div>
+        {selected && (
+          <div className={styles.checkoutCard}>
+            <div>
+              <strong>{selected.title} selected</strong>
+              <p>{selected.location} · {date}</p>
+            </div>
+            <Button type="button" onClick={() => navigate("/payment")}>
+              Continue to pay
+            </Button>
+          </div>
+        )}
       </section>
 
       <section className={styles.innerSection}>

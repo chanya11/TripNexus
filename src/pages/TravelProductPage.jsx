@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSearch } from "../context/SearchContext.jsx";
+import { useBooking } from "../context/BookingContext.jsx";
 import Button from "../components/common/Button.jsx";
 import styles from "./TravelProductPage.module.css";
 
@@ -27,6 +29,7 @@ const productConfig = {
     confirm: "Package selected",
   },
   cars: {
+    category: "car",
     title: "Car hire for any kind of trip",
     subtitle: "Great cars at great prices from the biggest rental companies.",
     searchLabels: ["Pick-up location", "Pick-up date", "Drop-off date", "Driver age"],
@@ -38,6 +41,7 @@ const productConfig = {
     confirm: "Car reserved",
   },
   attractions: {
+    category: "attraction",
     title: "Find things to do wherever you go",
     subtitle: "Tours, activities and local experiences with verified reviews.",
     searchLabels: ["Where", "Date", "Guests", "Category"],
@@ -49,6 +53,7 @@ const productConfig = {
     confirm: "Ticket selected",
   },
   taxis: {
+    category: "taxi",
     title: "Airport taxis, without the stress",
     subtitle: "Book a reliable ride from the terminal to your stay.",
     searchLabels: ["Pick-up airport", "Drop-off", "Arrival date", "Passengers"],
@@ -62,12 +67,14 @@ const productConfig = {
 };
 
 export default function TravelProductPage({ type, items }) {
-  const { formatPrice } = useSearch();
+  const { formatPrice, convertPrice } = useSearch();
+  const { upsertBooking } = useBooking();
   const config = productConfig[type];
   const [query, setQuery] = useState(config.defaults);
   const [submittedQuery, setSubmittedQuery] = useState(config.defaults);
   const [sort, setSort] = useState("recommended");
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate();
 
   const sortedItems = useMemo(() => {
     return [...items].sort((a, b) => {
@@ -83,8 +90,26 @@ export default function TravelProductPage({ type, items }) {
     setSelectedItem(null);
   };
 
+  const routeByType = {
+    car: "/car-rentals",
+    taxi: "/airport-taxis",
+    attraction: "/attractions",
+  };
+
   const selectItem = (item) => {
     setSelectedItem(item);
+    upsertBooking({
+      category: config.category,
+      title: item.title || item.airline,
+      subtitle: item.location || item.route || item.supplier,
+      description: item.detail,
+      amountInInr: convertPrice(item.price),
+      editPath: routeByType[config.category],
+      meta: config.searchLabels.map((label, index) => ({
+        label,
+        value: submittedQuery[index],
+      })),
+    });
   };
 
   return (
@@ -129,6 +154,9 @@ export default function TravelProductPage({ type, items }) {
               <strong>{config.confirm}</strong>
               <span>{selectedItem.title || selectedItem.airline}</span>
               <small>{formatPrice(selectedItem.price)} total</small>
+              <Button type="button" onClick={() => navigate("/payment")}>
+                Continue to pay
+              </Button>
             </div>
           )}
         </aside>

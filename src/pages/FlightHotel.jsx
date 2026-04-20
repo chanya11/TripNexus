@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../components/common/Button.jsx";
+import { useBooking } from "../context/BookingContext.jsx";
 import { packageResults } from "../data/travelProducts.js";
 import { useSearch } from "../context/SearchContext.jsx";
 import styles from "./FlightHotel.module.css";
@@ -19,9 +22,29 @@ const flashSales = [
 ];
 
 export default function FlightHotel() {
-  const { formatPrice } = useSearch();
+  const { formatPrice, convertPrice } = useSearch();
+  const { upsertBooking } = useBooking();
   const [query, setQuery] = useState({ from: "New Delhi", to: "Dubai", dates: "2026-04-18 - 2026-04-21", travellers: "2 travellers - 1 room" });
   const [selected, setSelected] = useState(null);
+  const navigate = useNavigate();
+
+  const reservePackage = (sale) => {
+    setSelected(sale);
+    upsertBooking({
+      category: "package",
+      title: sale.name,
+      subtitle: query.to,
+      description: "Flight and hotel package with flexible options",
+      amountInInr: convertPrice(sale.price),
+      editPath: "/flight-hotel",
+      meta: [
+        { label: "From", value: query.from },
+        { label: "Destination", value: query.to },
+        { label: "Dates", value: query.dates },
+        { label: "Travellers", value: query.travellers },
+      ],
+    });
+  };
 
   return (
     <main className={styles.page}>
@@ -69,11 +92,22 @@ export default function FlightHotel() {
                 <h3>{sale.name}</h3>
                 <p>Flight and hotel package with flexible options</p>
                 <strong>{formatPrice(sale.price)}</strong>
-                <button onClick={() => setSelected(sale)}>{selected?.name === sale.name ? "Selected" : "View deal"}</button>
+                <button onClick={() => reservePackage(sale)}>{selected?.name === sale.name ? "Selected" : "View deal"}</button>
               </div>
             </article>
           ))}
         </div>
+        {selected && (
+          <div className={styles.checkoutCard}>
+            <div>
+              <strong>{selected.name} selected</strong>
+              <p>{query.to} · {query.dates} · {query.travellers}</p>
+            </div>
+            <Button type="button" onClick={() => navigate("/payment")}>
+              Continue to pay
+            </Button>
+          </div>
+        )}
       </section>
 
       <section className={styles.innerSection}>

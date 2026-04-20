@@ -34,9 +34,14 @@ export function SearchProvider({ children }) {
   const [filters, setFilters] = useState(initialFilters);
   const [sortBy, setSortBy] = useState("top");
 
+  const convertPrice = (usd) => {
+    const current = currencies[currency];
+    return Math.round(usd * current.rate);
+  };
+
   const formatPrice = (usd) => {
     const current = currencies[currency];
-    const value = Math.round(usd * current.rate);
+    const value = convertPrice(usd);
     return `${current.symbol}${value.toLocaleString()}`;
   };
 
@@ -55,6 +60,7 @@ export function SearchProvider({ children }) {
       resetFilters,
       sortBy,
       setSortBy,
+      convertPrice,
       formatPrice,
     }),
     [search, currency, language, filters, sortBy]

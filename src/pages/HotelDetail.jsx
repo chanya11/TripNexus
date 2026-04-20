@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import Button from "../components/common/Button.jsx";
+import { useBooking } from "../context/BookingContext.jsx";
 import hotels from "../data/hotels.json";
 import { useSearch } from "../context/SearchContext.jsx";
 import styles from "./HotelDetail.module.css";
@@ -57,11 +58,13 @@ function daysBetween(checkIn, checkOut) {
 export default function HotelDetail() {
   const { id } = useParams();
   const hotel = hotels.find((item) => String(item.id) === id);
-  const { search, formatPrice } = useSearch();
+  const { search, formatPrice, convertPrice } = useSearch();
+  const { upsertBooking } = useBooking();
   const [selectedRooms, setSelectedRooms] = useState(() =>
     roomOptions.reduce((accumulator, room) => ({ ...accumulator, [room.name]: 0 }), {})
   );
   const [paymentState, setPaymentState] = useState(null);
+  const navigate = useNavigate();
 
   if (!hotel) {
     return <Navigate to="/searchresults" replace />;
@@ -72,18 +75,43 @@ export default function HotelDetail() {
   const discountedPrice = Math.round(hotel.price * nights);
   const oldPrice = hotel.oldPrice ? Math.round(hotel.oldPrice * nights) : Math.round(discountedPrice * 1.22);
   const totalSelected = Object.values(selectedRooms).reduce((total, count) => total + Number(count || 0), 0);
+
   const updateRoomCount = (roomName, count) => {
     setSelectedRooms((current) => ({ ...current, [roomName]: Number(count) }));
   };
+
+  const saveHotelReservation = (state = paymentState) => {
+    if (!state) return;
+
+    upsertBooking({
+      category: "hotel",
+      title: hotel.name,
+      subtitle: `${state.roomName} · ${pluralize(state.roomCount, "room")}`,
+      description: `${pluralize(nights, "night")} stay in ${hotel.city}`,
+      amountInInr: convertPrice(state.total),
+      editPath: `/hotel/${hotel.id}`,
+      meta: [
+        { label: "Location", value: hotel.location },
+        { label: "Check-in", value: search.checkIn },
+        { label: "Check-out", value: search.checkOut },
+        { label: "Guests", value: pluralize(search.adults, "adult") },
+        { label: "Rooms", value: pluralize(state.roomCount, "room") },
+      ],
+    });
+  };
+
   const reserveRoom = (room) => {
     const reservedCount = Number(selectedRooms[room.name]) || 1;
     const price = Math.round(hotel.price * room.multiplier * nights);
-    setSelectedRooms((current) => ({ ...current, [room.name]: reservedCount }));
-    setPaymentState({
+    const nextPaymentState = {
       roomName: room.name,
       roomCount: reservedCount,
       total: price * reservedCount,
-    });
+    };
+
+    setSelectedRooms((current) => ({ ...current, [room.name]: reservedCount }));
+    setPaymentState(nextPaymentState);
+    saveHotelReservation(nextPaymentState);
     document.getElementById("payment-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -258,19 +286,17 @@ export default function HotelDetail() {
               </div>
               <strong>{formatPrice(paymentState.total)}</strong>
             </div>
-            <div className={styles.paymentGrid}>
-              <label className={styles.paymentField}>
-                <span>UPI ID</span>
-                <input type="text" placeholder="" />
-              </label>
-              <label className={styles.paymentField}>
-                <span>Payment note</span>
-                <input type="text" value={`${hotel.name} booking`} readOnly />
-              </label>
-            </div>
             <div className={styles.paymentActions}>
-              <span>Paste your UPI ID above and continue with payment.</span>
-              <Button type="button">Pay now</Button>
+              <span>Continue to pay to review your booking summary, update any selection and choose your payment method.</span>
+              <Button
+                type="button"
+                onClick={() => {
+                  saveHotelReservation();
+                  navigate("/payment");
+                }}
+              >
+                Pay now
+              </Button>
             </div>
           </section>
         )}

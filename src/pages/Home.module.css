@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background:
     radial-gradient(circle at 20% 18%, rgba(61, 184, 255, 0.24), transparent 22%),
     radial-gradient(circle at 82% 12%, rgba(157, 107, 255, 0.24), transparent 24%),
@@ -13,6 +13,8 @@
 .heroInner {
   max-width: 1128px;
   margin: 0 auto;
+  position: relative;
+  z-index: 3;
 }
 
 .hero h1 {
