@@ -80,7 +80,8 @@ export const packageResults = [
     location: "Calangute, Goa",
     rating: 8.9,
     price: 328,
-    image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80",
     detail: "Return flight plus 3 nights at a beachfront resort",
   },
   {
@@ -89,7 +90,8 @@ export const packageResults = [
     location: "Pink City, Jaipur",
     rating: 9.0,
     price: 242,
-    image: "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=900&q=80",
     detail: "Flight plus boutique haveli stay with breakfast",
   },
   {
@@ -98,7 +100,8 @@ export const packageResults = [
     location: "Alleppey, Kerala",
     rating: 9.3,
     price: 396,
-    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80",
     detail: "Flights, airport transfer, and two nights on the water",
   },
   {
@@ -107,7 +110,8 @@ export const packageResults = [
     location: "Darjeeling, West Bengal",
     rating: 8.7,
     price: 287,
-    image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80",
     detail: "Flight plus hillside hotel and guided tea estate visit",
   },
   {
@@ -116,7 +120,8 @@ export const packageResults = [
     location: "Udaipur, Rajasthan",
     rating: 9.2,
     price: 412,
-    image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=900&q=80",
     detail: "Return flights and 2-night heritage palace stay",
   },
   {
@@ -125,7 +130,8 @@ export const packageResults = [
     location: "Port Blair, Andaman",
     rating: 9.0,
     price: 536,
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
     detail: "Flights, beach resort stay and snorkelling excursion",
   },
 ];
@@ -133,56 +139,61 @@ export const packageResults = [
 export const carResults = [
   {
     id: "car-1",
-    title: "Hyundai i20 or similar",
+    title: "Suv",
     supplier: "Avis",
     rating: 8.7,
     price: 34,
-    image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/1/1f/2024_Toyota_RAV4_Cruiser_Hybrid_front.jpg",
     detail: "Compact - automatic - air conditioning",
   },
   {
     id: "car-2",
-    title: "Toyota Innova Crysta",
+    title: "xuv",
     supplier: "Europcar",
     rating: 8.9,
     price: 69,
-    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://s3-ap-southeast-1.amazonaws.com/staticin.izmocars.com/toolkit/IN/2025/25nexa/25nexabaleno/25nexabaleno_pixGallery/_gallerypix/nexa_baleno_concept.jpg",
     detail: "People carrier - 6 seats - unlimited mileage",
   },
   {
     id: "car-3",
-    title: "MG ZS EV",
+    title: "sports",
     supplier: "Green Motion",
     rating: 8.4,
     price: 58,
-    image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrJij_vdW8CVJ7F2GtIwNUaZRFQeFZOOr0OA&s",
     detail: "Electric SUV - automatic - free cancellation",
   },
   {
     id: "car-4",
-    title: "Maruti Suzuki Dzire",
+    title: "sedan",
     supplier: "Hertz",
     rating: 8.5,
     price: 29,
-    image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80",
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQULGvOUlp90gY4ZPTwdYnaIi15HG5_mB_idQ&s",
     detail: "Sedan - manual - fuel efficient",
   },
   {
     id: "car-5",
-    title: "Kia Seltos",
+    title: "family seater",
     supplier: "Sixt",
     rating: 8.8,
     price: 61,
-    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRya2kvZcjse42r1L1WRsIVCdA7Pf7nzP1xig&s",
     detail: "SUV - automatic - great for road trips",
   },
   {
     id: "car-6",
-    title: "Toyota Fortuner",
+    title: "suv,x",
     supplier: "Budget",
     rating: 8.9,
     price: 84,
-    image: "https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb4327d1m1P4oAl7fnjGXAf8SKPL4ZbWV0ZQ&s",
     detail: "Premium SUV - 7 seats - unlimited mileage",
   },
 ];
@@ -195,7 +206,8 @@ export const attractionResults = [
     rating: 9.4,
     reviews: 1842,
     price: 22,
-    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=900&q=80",
     detail: "Three-hour guided tasting route with local stories",
   },
   {
@@ -205,7 +217,8 @@ export const attractionResults = [
     rating: 9.1,
     reviews: 968,
     price: 18,
-    image: "https://images.unsplash.com/photo-1597141286070-a78e739f7c47?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1597141286070-a78e739f7c47?auto=format&fit=crop&w=900&q=80",
     detail: "Skip-the-line entry and expert guide included",
   },
   {
@@ -215,7 +228,8 @@ export const attractionResults = [
     rating: 9.6,
     reviews: 4201,
     price: 74,
-    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80",
     detail: "Private transfer, monument entry, and lunch options",
   },
   {
@@ -225,7 +239,8 @@ export const attractionResults = [
     rating: 8.8,
     reviews: 1240,
     price: 16,
-    image: "https://images.unsplash.com/photo-1576514629366-5f1e356f9f6f?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1576514629366-5f1e356f9f6f?auto=format&fit=crop&w=900&q=80",
     detail: "Temple complex tour and musical fountain entry",
   },
   {
@@ -235,7 +250,8 @@ export const attractionResults = [
     rating: 9.3,
     reviews: 2012,
     price: 59,
-    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80",
     detail: "Amber Fort, City Palace and local bazaar with guide",
   },
   {
@@ -245,7 +261,8 @@ export const attractionResults = [
     rating: 9.5,
     reviews: 1784,
     price: 27,
-    image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=80",
     detail: "Early-morning Ganges cruise with cultural commentary",
   },
   {
@@ -255,7 +272,8 @@ export const attractionResults = [
     rating: 9.0,
     reviews: 1533,
     price: 24,
-    image: "https://images.unsplash.com/photo-1526481280695-3c4691f29f37?auto=format&fit=crop&w=900&q=80",
+    image:
+      "https://images.unsplash.com/photo-1526481280695-3c4691f29f37?auto=format&fit=crop&w=900&q=80",
     detail: "Guided tasting walk through iconic neighborhoods",
   },
 ];
