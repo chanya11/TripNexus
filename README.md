@@ -108,12 +108,6 @@ Context API
 
 ---
 
-## 📌 Future Enhancements
-
-- Backend integration  
-- User authentication  
-- Payment gateway  
-- Real-time booking  
 
 ---
 
