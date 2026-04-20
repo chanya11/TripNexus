@@ -1,0 +1,168 @@
+.extra-facilities-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.extra-facilities-top-line {
+  width: 100%;
+  height: 4px;
+  background: #003b95;
+}
+
+.extra-facilities-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 22px 25px 12px;
+  box-sizing: border-box;
+}
+
+.extra-facilities-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.extra-facilities-breadcrumb a,
+.extra-facilities-breadcrumb span {
+  color: inherit;
+  text-decoration: none;
+}
+
+.extra-facilities-breadcrumb a {
+  color: #0071c2;
+}
+
+.extra-facilities-breadcrumb-sep {
+  font-size: 16px;
+  line-height: 1;
+  color: #6b6b6b;
+}
+
+.extra-facilities-header {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.extra-facilities-header h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #1f1f1f;
+}
+
+.extra-facilities-card {
+  background: #ffffff;
+  border: 1px solid #dcdfe4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.extra-facilities-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 60px;
+  padding: 0 30px 0 28px;
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.extra-facilities-row:first-child {
+  border-top: 0;
+}
+
+.extra-facilities-row-text {
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.extra-facilities-row-icon {
+  width: 18px;
+  height: 18px;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.extra-facilities-help-section {
+  margin-top: 34px;
+}
+
+.extra-facilities-help-section h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+  color: #1f1f1f;
+  text-align: left;
+}
+
+.extra-facilities-footer {
+  margin-top: 44px;
+  padding-bottom: 8px;
+}
+
+.extra-facilities-footer-links {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.extra-facilities-footer-link {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #003b95;
+  text-decoration: none;
+}
+
+.extra-facilities-page svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .extra-facilities-shell {
+    padding: 20px 16px 12px;
+  }
+
+  .extra-facilities-header h1 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .extra-facilities-row {
+    min-height: 52px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .extra-facilities-footer {
+    margin-top: 32px;
+  }
+}

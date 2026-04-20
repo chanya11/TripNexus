@@ -17,6 +17,9 @@
   --line: rgba(109, 136, 199, 0.22);
   --line-strong: rgba(105, 167, 255, 0.4);
   --panel-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --brand: #3db8ff;
+  --brand-strong: #2aa3ee;
+  --brand-soft: rgba(61, 184, 255, 0.18);
   --neon-blue: #3db8ff;
   --neon-blue-soft: rgba(61, 184, 255, 0.18);
   --neon-purple: #9d6bff;
@@ -97,4 +100,190 @@ a {
 ::selection {
   background: rgba(61, 184, 255, 0.22);
   color: var(--text-strong);
+}
+
+.hc-page,
+.cancel-page,
+.payment-page,
+.booking-page,
+.communications-page,
+.room-types-page,
+.pricing-page,
+.credit-cards-page,
+.property-policies-page,
+.extra-facilities-page,
+.security-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(61, 184, 255, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(7, 12, 24, 0.96), rgba(4, 6, 12, 0.98));
+  color: var(--text);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+.hc-alert,
+.hc-contact-card,
+.hc-faq-card,
+.cancel-card,
+.payment-card,
+.booking-card,
+.communications-card,
+.room-types-card,
+.pricing-card,
+.credit-cards-card,
+.property-policies-card,
+.extra-facilities-card,
+.security-card {
+  background: rgba(12, 18, 32, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--panel-shadow);
+}
+
+.hc-alert-copy h3,
+.hc-alert-copy p,
+.hc-alert-toggle,
+.hc-hero h1,
+.hc-hero p,
+.hc-contact-icon,
+.hc-contact-copy h3,
+.hc-contact-copy p,
+.hc-faq h2,
+.hc-category-item,
+.hc-faq-row-label,
+.hc-row-arrow,
+.hc-eyebrow,
+.hc-footer-links,
+.cancel-breadcrumb,
+.cancel-breadcrumb span,
+.cancel-header h1,
+.cancel-row-text,
+.cancel-row-icon,
+.cancel-help-section h2,
+.cancel-footer-links,
+.payment-breadcrumb,
+.payment-breadcrumb span,
+.payment-header h1,
+.payment-row-text,
+.payment-row-icon,
+.payment-help-section h2,
+.payment-footer-links,
+.booking-breadcrumb,
+.booking-breadcrumb span,
+.booking-header h1,
+.booking-row-text,
+.booking-row-icon,
+.booking-help-section h2,
+.booking-footer-links,
+.communications-breadcrumb,
+.communications-breadcrumb span,
+.communications-header h1,
+.communications-row-text,
+.communications-row-icon,
+.communications-help-section h2,
+.communications-footer-links,
+.room-types-breadcrumb,
+.room-types-breadcrumb span,
+.room-types-header h1,
+.room-types-row-text,
+.room-types-row-icon,
+.room-types-help-section h2,
+.room-types-footer-links,
+.pricing-breadcrumb,
+.pricing-breadcrumb span,
+.pricing-header h1,
+.pricing-row-text,
+.pricing-row-icon,
+.pricing-help-section h2,
+.pricing-footer-links,
+.credit-cards-breadcrumb,
+.credit-cards-breadcrumb span,
+.credit-cards-header h1,
+.credit-cards-row-text,
+.credit-cards-row-icon,
+.credit-cards-help-section h2,
+.credit-cards-footer-links,
+.property-policies-breadcrumb,
+.property-policies-breadcrumb span,
+.property-policies-header h1,
+.property-policies-row-text,
+.property-policies-row-icon,
+.property-policies-help-section h2,
+.property-policies-footer-links,
+.extra-facilities-breadcrumb,
+.extra-facilities-breadcrumb span,
+.extra-facilities-header h1,
+.extra-facilities-row-text,
+.extra-facilities-row-icon,
+.extra-facilities-help-section h2,
+.extra-facilities-footer-links,
+.security-breadcrumb,
+.security-breadcrumb span,
+.security-header h1,
+.security-row-text,
+.security-row-icon,
+.security-help-section h2,
+.security-footer-links {
+  color: var(--text) !important;
+}
+
+.hc-alert-copy a,
+.hc-secondary-link,
+.cancel-breadcrumb a,
+.cancel-footer-link,
+.payment-breadcrumb a,
+.payment-footer-link,
+.booking-breadcrumb a,
+.booking-footer-link,
+.communications-breadcrumb a,
+.communications-footer-link,
+.room-types-breadcrumb a,
+.room-types-footer-link,
+.pricing-breadcrumb a,
+.pricing-footer-link,
+.credit-cards-breadcrumb a,
+.credit-cards-footer-link,
+.property-policies-breadcrumb a,
+.property-policies-footer-link,
+.extra-facilities-breadcrumb a,
+.extra-facilities-footer-link,
+.security-breadcrumb a,
+.security-footer-link {
+  color: var(--neon-blue) !important;
+}
+
+.hc-signin-btn {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: #05070d;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(61, 184, 255, 0.26);
+}
+
+.hc-faq-row,
+.cancel-row,
+.payment-row,
+.booking-row,
+.communications-row,
+.room-types-row,
+.pricing-row,
+.credit-cards-row,
+.property-policies-row,
+.extra-facilities-row,
+.security-row {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-top-color: var(--line) !important;
+}
+
+.hc-faq-row:hover,
+.cancel-row:hover,
+.payment-row:hover,
+.booking-row:hover,
+.communications-row:hover,
+.room-types-row:hover,
+.pricing-row:hover,
+.credit-cards-row:hover,
+.property-policies-row:hover,
+.extra-facilities-row:hover,
+.security-row:hover {
+  background: rgba(61, 184, 255, 0.08) !important;
 }

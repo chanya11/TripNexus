@@ -1,0 +1,167 @@
+.cancel-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.cancel-top-line {
+  width: 100%;
+  height: 4px;
+  background: #003b95;
+}
+
+.cancel-shell {
+  width: 100%;
+  max-width: 1048px;
+  margin: 0 auto;
+  padding: 24px 32px 10px;
+  box-sizing: border-box;
+}
+
+.cancel-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.cancel-breadcrumb a,
+.cancel-breadcrumb span {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cancel-breadcrumb a {
+  color: #0071c2;
+}
+
+.cancel-breadcrumb-sep {
+  font-size: 16px;
+  line-height: 1;
+  color: #6b6b6b;
+}
+
+.cancel-header {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.cancel-header h1 {
+  margin: 0;
+  font-size: 29px;
+  line-height: 38px;
+  font-weight: 800;
+  color: #1f1f1f;
+  letter-spacing: -0.02em;
+}
+
+.cancel-card {
+  background: #ffffff;
+  border: 1px solid #dcdfe4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cancel-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 49px;
+  padding: 0 22px 0 23px;
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.cancel-row:first-child {
+  border-top: 0;
+}
+
+.cancel-row-text {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.cancel-row-icon {
+  width: 18px;
+  height: 18px;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.cancel-help-section {
+  margin-top: 26px;
+}
+
+.cancel-help-section h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+  color: #1f1f1f;
+  text-align: left;
+}
+
+.cancel-footer {
+  margin-top: 326px;
+  padding-bottom: 10px;
+}
+
+.cancel-footer-links {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.cancel-footer-link {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #003b95;
+  text-decoration: none;
+}
+
+.cancel-page svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .cancel-shell {
+    padding: 20px 16px 10px;
+  }
+
+  .cancel-header h1 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+
+  .cancel-row {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cancel-footer {
+    margin-top: 72px;
+  }
+}
