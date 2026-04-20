@@ -114,6 +114,12 @@ export default function Header() {
               )}
             </div>
             <Button variant="ghost" className={styles.propertyButton} onClick={() => setModal("property")}>List your property</Button>
+            <Link to="/help-center" className={styles.helpCenterLink} aria-label="Open Help Center">
+              <span className={styles.helpCenterBadge}>
+                <span className={styles.helpIcon}>?</span>
+                <span className={styles.helpLabel}>Help Center</span>
+              </span>
+            </Link>
             {account ? (
               <div className={styles.dropdownWrap}>
                 <button

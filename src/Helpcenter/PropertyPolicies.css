@@ -1,0 +1,168 @@
+.property-policies-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.property-policies-top-line {
+  width: 100%;
+  height: 4px;
+  background: #003b95;
+}
+
+.property-policies-shell {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 22px 10px 12px;
+  box-sizing: border-box;
+}
+
+.property-policies-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.property-policies-breadcrumb a,
+.property-policies-breadcrumb span {
+  color: inherit;
+  text-decoration: none;
+}
+
+.property-policies-breadcrumb a {
+  color: #0071c2;
+}
+
+.property-policies-breadcrumb-sep {
+  font-size: 16px;
+  line-height: 1;
+  color: #6b6b6b;
+}
+
+.property-policies-header {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.property-policies-header h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #1f1f1f;
+}
+
+.property-policies-card {
+  background: #ffffff;
+  border: 1px solid #dcdfe4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.property-policies-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 59px;
+  padding: 0 30px 0 26px;
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.property-policies-row:first-child {
+  border-top: 0;
+}
+
+.property-policies-row-text {
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.property-policies-row-icon {
+  width: 18px;
+  height: 18px;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.property-policies-help-section {
+  margin-top: 33px;
+}
+
+.property-policies-help-section h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+  color: #1f1f1f;
+  text-align: left;
+}
+
+.property-policies-footer {
+  margin-top: 41px;
+  padding-bottom: 8px;
+}
+
+.property-policies-footer-links {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.property-policies-footer-link {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #003b95;
+  text-decoration: none;
+}
+
+.property-policies-page svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .property-policies-shell {
+    padding: 20px 16px 12px;
+  }
+
+  .property-policies-header h1 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .property-policies-row {
+    min-height: 52px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .property-policies-footer {
+    margin-top: 32px;
+  }
+}

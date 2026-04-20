@@ -1,0 +1,168 @@
+.credit-cards-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.credit-cards-top-line {
+  width: 100%;
+  height: 4px;
+  background: #003b95;
+}
+
+.credit-cards-shell {
+  width: 100%;
+  max-width: 1125px;
+  margin: 0 auto;
+  padding: 22px 21px 12px;
+  box-sizing: border-box;
+}
+
+.credit-cards-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.credit-cards-breadcrumb a,
+.credit-cards-breadcrumb span {
+  color: inherit;
+  text-decoration: none;
+}
+
+.credit-cards-breadcrumb a {
+  color: #0071c2;
+}
+
+.credit-cards-breadcrumb-sep {
+  font-size: 16px;
+  line-height: 1;
+  color: #6b6b6b;
+}
+
+.credit-cards-header {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.credit-cards-header h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #1f1f1f;
+}
+
+.credit-cards-card {
+  background: #ffffff;
+  border: 1px solid #dcdfe4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.credit-cards-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 24px 0 16px;
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.credit-cards-row:first-child {
+  border-top: 0;
+}
+
+.credit-cards-row-text {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.credit-cards-row-icon {
+  width: 18px;
+  height: 18px;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.credit-cards-help-section {
+  margin-top: 21px;
+}
+
+.credit-cards-help-section h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+  color: #1f1f1f;
+  text-align: left;
+}
+
+.credit-cards-footer {
+  margin-top: 28px;
+  padding-bottom: 8px;
+}
+
+.credit-cards-footer-links {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.credit-cards-footer-link {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #003b95;
+  text-decoration: none;
+}
+
+.credit-cards-page svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .credit-cards-shell {
+    padding: 20px 16px 12px;
+  }
+
+  .credit-cards-header h1 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .credit-cards-row {
+    min-height: 46px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .credit-cards-footer {
+    margin-top: 32px;
+  }
+}
