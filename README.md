@@ -1,16 +1,128 @@
-# React + Vite
+# 🌍 TripNexus – Travel Booking Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TripNexus is a modern React-based web application designed to simplify travel planning. It allows users to search, explore, and book hotels while also providing a comprehensive Help Center for user support.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- 🔍 Search hotels based on location and preferences  
+- 🏨 Display hotel listings with details  
+- 🧭 Smooth navigation using React components  
+- 📘 Help Center with multiple support sections  
+- 🎯 Reusable UI components  
+- 🌐 State management using Context API  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Frontend: React (Vite)
+- Styling: CSS Modules
+- State Management: React Context API
+- Routing: React Router
+- Data: Local JSON files
+
+---
+
+## 📁 Project Structure
+
+TripNexus/
+│
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   ├── Header/
+│   │   ├── Footer/
+│   │   ├── Navbar/
+│   │   ├── SearchBar/
+│   │   ├── Filters/
+│   │   └── HotelCard/
+│   │
+│   ├── context/
+│   │   ├── BookingContext.jsx
+│   │   └── SearchContext.jsx
+│   │
+│   ├── Helpcenter/
+│   │   ├── BookingDetails.jsx
+│   │   ├── Cancellations.jsx
+│   │   ├── Payment.jsx
+│   │   └── other help files
+│   │
+│   ├── data/
+│   │   ├── hotels.json
+│   │   └── travelProducts.js
+│   │
+│   ├── pages/
+│   │   └── Attractions.jsx
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+└── README.md
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository  
+git clone <your-repo-link>  
+
+2. Navigate into the project  
+cd TripNexus  
+
+3. Install dependencies  
+npm install  
+
+4. Run the project  
+npm run dev  
+
+5. Open in browser  
+http://localhost:5173  
+
+---
+
+## 💡 Key Components
+
+Footer  
+- Contains navigation links and help center access  
+- Styled using CSS Modules  
+
+Help Center  
+- Separate section for user support  
+- Includes booking, cancellation, payment, and policies  
+
+Context API  
+- BookingContext handles booking data  
+- SearchContext manages search and filters  
+
+---
+
+## 🎨 UI/UX
+
+- Responsive design  
+- Clean layout  
+- Reusable components  
+- Organized folder structure  
+
+---
+
+## 📌 Future Enhancements
+
+- Backend integration  
+- User authentication  
+- Payment gateway  
+- Real-time booking  
+
+---
+
+## 👩‍💻 Author
+
+Chanya 
+
+---
+
+## 📄 License
+
+This project is for educational purposes.
