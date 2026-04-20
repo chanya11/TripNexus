@@ -210,9 +210,9 @@ export default function Home() {
         ))}
       </HorizontalRow>
 
-      <section className={styles.container}>
-        <h2>Quick and easy trip planner</h2>
-        <p className={styles.subhead}>Pick a vibe and explore top destinations near you</p>
+      <section className={`${styles.container} ${styles.tripPlannerSection}`}>
+        <h2 className={styles.tripPlannerTitle}>Quick and easy trip planner</h2>
+        <p className={`${styles.subhead} ${styles.tripPlannerSubhead}`}>Pick a vibe and explore top destinations near you</p>
         <div className={styles.pillRow}>
           {inspirationTabs.map((tab) => (
             <button
