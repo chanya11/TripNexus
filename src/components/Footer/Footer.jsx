@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styles from "./Footer.module.css";
 
 const columns = [
@@ -8,16 +9,66 @@ const columns = [
   ["Customer service", "Partner help", "Careers", "Sustainability", "Press centre"],
 ];
 
+const accountStorageKey = "tripnexus-account";
+const accountEventName = "tripnexus-account-change";
+
+function readStoredAccount() {
+  if (typeof window === "undefined") return null;
+
+  try {
+    const stored = window.localStorage.getItem(accountStorageKey);
+    return stored ? JSON.parse(stored) : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function Footer() {
+  const [account, setAccount] = useState(readStoredAccount);
+
+  useEffect(() => {
+    const syncAccount = (event) => {
+      if (event instanceof CustomEvent) {
+        setAccount(event.detail || null);
+        return;
+      }
+
+      setAccount(readStoredAccount());
+    };
+
+    window.addEventListener(accountEventName, syncAccount);
+    window.addEventListener("storage", syncAccount);
+
+    return () => {
+      window.removeEventListener(accountEventName, syncAccount);
+      window.removeEventListener("storage", syncAccount);
+    };
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.cta}>
         <h2>Save time, save money!</h2>
-        <p>Sign up and we will send the best deals to you</p>
-        <form>
-          <input placeholder="Your email address" type="email" />
-          <button type="button">Subscribe</button>
-        </form>
+        {account ? (
+          <>
+            <p>Signed in as {account.email}. Your account is ready for faster booking and member deals.</p>
+            <div className={styles.accountChip}>
+              <span>{account.initials}</span>
+              <div>
+                <strong>{account.name}</strong>
+                <small>{account.email}</small>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <p>Sign up and we will send the best deals to you</p>
+            <form>
+              <input placeholder="Your email address" type="email" />
+              <button type="button">Subscribe</button>
+            </form>
+          </>
+        )}
       </div>
       <div className={styles.links}>
         {columns.map((column, index) => (

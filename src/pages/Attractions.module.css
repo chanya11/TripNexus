@@ -234,6 +234,24 @@
   min-height: 36px;
 }
 
+.checkoutCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 16px 18px;
+  border: 1px solid rgba(74, 222, 128, 0.18);
+  border-radius: 18px;
+  background: rgba(74, 222, 128, 0.1);
+  box-shadow: var(--panel-shadow);
+}
+
+.checkoutCard p {
+  margin: 4px 0 0;
+  color: #b6ffd0;
+}
+
 .tabs {
   display: flex;
   gap: 18px;
@@ -282,6 +300,11 @@
   .experienceGrid,
   .cityGrid {
     grid-template-columns: 1fr;
+  }
+
+  .checkoutCard {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nearbyGrid {

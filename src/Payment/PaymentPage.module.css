@@ -1,0 +1,418 @@
+.paymentContainer {
+  min-height: 100vh;
+  padding: 126px 16px 32px;
+}
+
+.paymentWrapper {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.summaryPanel,
+.checkoutPanel,
+.successMessage {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(12, 18, 32, 0.96), rgba(17, 24, 41, 0.96));
+  box-shadow: var(--panel-shadow);
+}
+
+.summaryPanel {
+  position: sticky;
+  top: 126px;
+  align-self: start;
+  padding: 20px;
+}
+
+.summaryHeader h2,
+.sectionHeader h1,
+.successMessage h2 {
+  margin: 6px 0 8px;
+  color: var(--text-strong);
+}
+
+.summaryHeader p,
+.sectionHeader p,
+.bookingCard p,
+.reviewCard p,
+.successMessage p,
+.emptyState p {
+  color: var(--muted);
+}
+
+.eyebrow {
+  color: var(--neon-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bookingList {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.bookingCard,
+.reviewCard,
+.confirmationCard {
+  border: 1px solid rgba(61, 184, 255, 0.14);
+  border-radius: 20px;
+  background: rgba(9, 14, 26, 0.78);
+  padding: 16px;
+}
+
+.bookingCardTop,
+.reviewCardHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.bookingType {
+  display: inline-flex;
+  margin-bottom: 8px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(61, 184, 255, 0.14);
+  color: var(--neon-blue);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.bookingCard h3,
+.reviewCard h3,
+.confirmationCard h3 {
+  margin: 0 0 4px;
+  color: var(--text-strong);
+  font-size: 18px;
+}
+
+.bookingCardTop strong,
+.reviewCardHeader strong,
+.totalBox strong,
+.finalAmount {
+  color: var(--text-strong);
+  font-size: 24px;
+}
+
+.bookingDescription {
+  margin: 10px 0 0;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.metaGrid span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.metaGrid strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.cardActions,
+.stepActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.linkButton,
+.linkButtonDanger,
+.primaryButton,
+.secondaryButton {
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.linkButton,
+.linkButtonDanger {
+  background: transparent;
+  padding: 0;
+}
+
+.linkButton {
+  color: var(--neon-blue);
+}
+
+.linkButtonDanger {
+  color: var(--danger);
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 44px;
+  padding: 0 18px;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: #05070d;
+}
+
+.primaryButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--neon-blue);
+  border: 1px solid var(--line-strong);
+}
+
+.totalBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.checkoutPanel {
+  padding: 20px;
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--muted);
+  background: rgba(9, 14, 26, 0.65);
+}
+
+.stepItem span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  font-weight: 800;
+}
+
+.stepActive {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.stepActive span {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: #05070d;
+  border-color: transparent;
+}
+
+.stepSection {
+  display: grid;
+  gap: 18px;
+}
+
+.infoBanner {
+  border: 1px solid rgba(61, 184, 255, 0.24);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: rgba(61, 184, 255, 0.08);
+  color: #dceaff;
+}
+
+.reviewGrid,
+.confirmationGrid {
+  display: grid;
+  gap: 16px;
+}
+
+.formSection {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 18px;
+  background: rgba(9, 14, 26, 0.5);
+}
+
+.formSection h3 {
+  margin: 0 0 14px;
+  color: var(--text-strong);
+  font-size: 20px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formGroup label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.formGroup input {
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0 14px;
+  background: rgba(13, 19, 34, 0.98);
+  color: var(--text);
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--line-strong);
+  box-shadow: 0 0 0 3px rgba(61, 184, 255, 0.14);
+}
+
+.errorText {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.methodOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.methodOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(13, 19, 34, 0.98);
+  cursor: pointer;
+}
+
+.methodOption input {
+  display: none;
+}
+
+.activeMethod {
+  border-color: var(--line-strong);
+  background: rgba(61, 184, 255, 0.12);
+}
+
+.termsSection {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(9, 14, 26, 0.5);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text);
+}
+
+.confirmationGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.confirmationCard p {
+  margin: 4px 0 0;
+  color: var(--text);
+}
+
+.emptyState {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.successMessage {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 28px;
+  text-align: center;
+}
+
+.successIcon {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--success);
+  color: #06100b;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+@media (max-width: 980px) {
+  .paymentContainer {
+    padding-top: 116px;
+  }
+
+  .paymentWrapper,
+  .confirmationGrid,
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryPanel {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .stepper,
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookingCardTop,
+  .reviewCardHeader,
+  .stepActions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .methodOptions {
+    flex-direction: column;
+  }
+}

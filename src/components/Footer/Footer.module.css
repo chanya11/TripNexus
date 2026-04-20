@@ -28,6 +28,42 @@
   gap: 8px;
 }
 
+.accountChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(61, 184, 255, 0.1);
+}
+
+.accountChip span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: #05070d;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.accountChip div {
+  display: grid;
+  text-align: left;
+}
+
+.accountChip strong {
+  color: var(--text-strong);
+}
+
+.accountChip small {
+  color: var(--muted);
+}
+
 .cta input {
   width: min(420px, 100%);
   height: 48px;
@@ -93,6 +129,12 @@
   .cta form {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .accountChip {
+    width: 100%;
+    justify-content: center;
+    border-radius: 22px;
   }
 
   .cta button {

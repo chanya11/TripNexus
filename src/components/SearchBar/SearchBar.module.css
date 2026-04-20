@@ -1,5 +1,6 @@
 .searchBar {
   position: relative;
+  z-index: 10;
   display: grid;
   grid-template-columns: 1.55fr 0.9fr 0.9fr 1.25fr 128px;
   gap: 4px;
@@ -77,7 +78,7 @@
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  z-index: 12;
+  z-index: 30;
   min-width: 100%;
   background: var(--surface-2);
   border: 1px solid var(--line-strong);

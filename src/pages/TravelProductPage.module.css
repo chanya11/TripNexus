@@ -149,6 +149,10 @@
   color: inherit;
 }
 
+.selectionBox button {
+  margin-top: 8px;
+}
+
 .resultHeader {
   display: flex;
   align-items: end;

@@ -1,4 +1,7 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../components/common/Button.jsx";
+import { useBooking } from "../context/BookingContext.jsx";
 import { flightResults } from "../data/travelProducts.js";
 import { useSearch } from "../context/SearchContext.jsx";
 import styles from "./Flights.module.css";
@@ -17,16 +20,37 @@ const airportCards = [
 ];
 
 export default function Flights() {
-  const { formatPrice } = useSearch();
+  const { formatPrice, convertPrice } = useSearch();
+  const { upsertBooking } = useBooking();
   const [trip, setTrip] = useState("Return");
   const [query, setQuery] = useState({ from: "New Delhi", to: "Mumbai", depart: "2026-04-20", returnDate: "2026-04-27", travellers: "1 adult" });
   const [submitted, setSubmitted] = useState(query);
   const [selected, setSelected] = useState(null);
   const [openFaq, setOpenFaq] = useState("find");
+  const navigate = useNavigate();
 
   const orderedFlights = useMemo(() => {
     return flightResults.map((flight, index) => ({ ...flight, price: flight.price + index * 12 }));
   }, []);
+
+  const reserveFlight = (flight) => {
+    setSelected(flight);
+    upsertBooking({
+      category: "flight",
+      title: flight.airline,
+      subtitle: `${submitted.from} to ${submitted.to}`,
+      description: `${flight.depart} - ${flight.arrive} · ${flight.duration} · ${flight.stops}`,
+      amountInInr: convertPrice(flight.price),
+      editPath: "/flights",
+      meta: [
+        { label: "From", value: submitted.from },
+        { label: "To", value: submitted.to },
+        { label: "Depart", value: submitted.depart },
+        { label: trip === "One-way" ? "Trip type" : "Return", value: trip === "One-way" ? trip : submitted.returnDate },
+        { label: "Travellers", value: submitted.travellers },
+      ],
+    });
+  };
 
   return (
     <main className={styles.page}>
@@ -102,7 +126,7 @@ export default function Flights() {
         <h2>Top flights from {submitted.from}</h2>
         <div className={styles.flightList}>
           {orderedFlights.map((flight) => (
-            <button key={flight.id} className={selected?.id === flight.id ? styles.selected : ""} onClick={() => setSelected(flight)}>
+            <button key={flight.id} className={selected?.id === flight.id ? styles.selected : ""} onClick={() => reserveFlight(flight)}>
               <div>
                 <strong>{flight.airline}</strong>
                 <span>{submitted.from} to {submitted.to} - {flight.stops}</span>
@@ -113,6 +137,17 @@ export default function Flights() {
             </button>
           ))}
         </div>
+        {selected && (
+          <div className={styles.checkoutCard}>
+            <div>
+              <strong>{selected.airline} selected</strong>
+              <p>{submitted.from} to {submitted.to} · {selected.depart} - {selected.arrive} · {selected.duration}</p>
+            </div>
+            <Button type="button" onClick={() => navigate("/payment")}>
+              Continue to pay
+            </Button>
+          </div>
+        )}
       </section>
 
       <section className={styles.innerSection}>
